@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Clone</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://emoji-button.js.org/css/index.min.css"> <!-- Emoji Picker CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="whatsapp-header d-flex justify-content-between align-items-center">
+  <div class="header-left d-flex align-items-center">
+    <i class="fas fa-arrow-left text-light mr-3"></i>
+    <div>
+      <h5 class="text-light mb-0">WhatsApp Clone</h5>
+      <small class="text-light">Online</small>
+    </div>
+  </div>
+  <div class="header-right d-flex align-items-center">
+    <i class="fas fa-search text-light mr-3 search-icon" data-toggle="modal" data-target="#searchModal"></i>
+    <i class="fas fa-ellipsis-v text-light" id="settings-btn"></i>
+  </div>
+</header>
+
+<!-- Chat Messages Section -->
+<div class="chat-container">
+  <div id="messages" class="chat-messages">
+    <!-- Message Bubbles will be appended here -->
+  </div>
+</div>
+
+<!-- Chat Input Section -->
+<footer class="whatsapp-footer">
+  <div class="input-container">
+    <i class="fas fa-smile text-secondary" id="emoji-btn"></i>
+    <input type="text" id="message" class="form-control" placeholder="Type a message">
+    <i class="fas fa-paperclip text-secondary" id="attachment-btn"></i>
+    <input type="file" id="file-input" style="display: none;">
+    <button id="send-btn" class="btn btn-primary">
+      <i class="fas fa-paper-plane"></i>
+    </button>
+  </div>
+</footer>
+
+<!-- Search Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="searchModalLabel">Search Messages</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="search-input" class="form-control" placeholder="Search for messages...">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Change Username Modal -->
+<div class="modal fade" id="usernameModal" tabindex="-1" role="dialog" aria-labelledby="usernameModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="usernameModalLabel">Change Username</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="new-username" class="form-control" placeholder="Enter new username">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="save-username-btn">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://emoji-button.js.org/dist/index.min.js"></script> <!-- Emoji Picker JS -->
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
