@@ -1,14 +1,14 @@
 {
-    "name": "whatsapp-clone-frontend",
+    "name": "whatsapp-clone-fullstack",
     "version": "1.0.0",
-    "description": "WhatsApp Clone Frontend",
-    "main": "index.html",
+    "description": "WhatsApp Clone Fullstack App",
+    "main": "server.js",
     "scripts": {
-        "start": "serve -s ."
+      "start": "node server.js"
     },
     "dependencies": {
-        "express": "^4.21.1",
-        "serve": "^14.2.3",
-        "socket.io": "^4.8.0"
+      "express": "^4.21.1",
+      "socket.io": "^4.8.1"
     }
-}
+  }
+  
